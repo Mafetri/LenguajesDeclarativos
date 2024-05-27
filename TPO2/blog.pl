@@ -55,7 +55,7 @@ posts_table([post(Id, Title, Content)|T]) -->
             p(Content),
             div([class=comments], [
                 h3('Comments'),
-                div([class=comment], [
+                div([
                     \comments(Id)
                 ]),
                 form([class="comment_form",action='/comment', method='POST'], [
@@ -73,7 +73,12 @@ comments(PostId) -->
     {
         findall(Comment, comment(PostId, Comment), Comments)
     },
-    html(Comments).
+    html([\comment_p(Comments)]).
+
+comment_p([]) --> [].
+comment_p([Comment|Rest]) -->
+    html(p([class="comment"], ["➤ ", Comment])),
+    comment_p(Rest).
 
 
 % ========== New Post Handler ==========
