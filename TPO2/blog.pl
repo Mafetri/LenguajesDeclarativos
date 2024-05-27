@@ -38,9 +38,8 @@ home_page(_Request) :-
 
 blog_page(Posts) -->
     html([
-        h1('Reddit 2.0'),
-        \posts_table(Posts),
-        a(href('/post'), 'Add new post')
+        h1('reddit.pl'),
+        \posts_table(Posts)
     ]).
 
 
@@ -49,6 +48,7 @@ posts_table([]) --> [].
 posts_table([post(Id, Title, Content)|T]) -->
     html([
         section([class=posts], [
+            a(href('/post'), 'Add New Post'),
             div([class=post], [
                 h2(Title),
                 p(Content),
@@ -57,7 +57,7 @@ posts_table([post(Id, Title, Content)|T]) -->
                     div([class=comment], [
                         \comments(Id)
                     ]),
-                    form([action='/comment', method='POST'], [
+                    form([class="comment_form",action='/comment', method='POST'], [
                         input([type=hidden, name=post_id, value=Id]),
                         textarea([name=comment], ''),
                         input([type=submit, value='Add Comment'])
