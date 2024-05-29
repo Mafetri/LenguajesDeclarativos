@@ -32,18 +32,17 @@ server(Port) :-
 home_page(_Request) :-
     findall(post(Id, Title, Content), post(Id, Title, Content), Posts),
     reply_html_page(
-        [title('Blog'), link([rel=stylesheet, href='styles.css'])],
-        \blog_page(Posts)
+        [
+            title('Blog'), link([rel=stylesheet, href='styles.css'])
+        ],
+        [
+            h1([class="title"],'reddit.pl'),
+            section([class=posts], [
+                a(href('/post'), 'Add New Post'),
+                \posts_table(Posts)
+            ])
+        ]
     ).
-
-blog_page(Posts) -->
-    html([
-        h1('reddit.pl'),
-        section([class=posts], [
-            a(href('/post'), 'Add New Post'),
-            \posts_table(Posts)
-        ])
-    ]).
 
 
 % ========== Posts Table ==========
@@ -90,8 +89,14 @@ new_post(Request) :-
     ]),
     (   max_post_id(MaxId) -> Id is MaxId + 1 ; Id = 1),
     assert_post(Id, Title, Content),
-    format('Content-type: text/html~n~n'),
-    format('<p>Post added. <a href="/">Back to home</a></p>').
+    reply_html_page(
+        [title('Post Added'), link([rel=stylesheet, href='styles.css'])],
+        [
+            h1([class="title"],'reddit.pl'),
+            section([class(notification)], [
+                h2(['Post added! ', a([href('/')], 'Back to home')])
+            ])
+        ]).
 
 new_post(_Request) :-
     reply_html_page(title('New Post'), \post_form).
@@ -124,5 +129,11 @@ new_comment(Request) :-
         comment(Comment, [string])
     ]),
     assert_comment(PostId, Comment),
-    format('Content-type: text/html~n~n'),
-    format('<p>Comment added. <a href="/">Back to home</a></p>').
+    reply_html_page(
+        [title('Post Added'), link([rel=stylesheet, href='styles.css'])],
+        [
+            h1([class="title"],'reddit.pl'),
+            section([class(notification)], [
+                h2(['Post added! ', a([href('/')], 'Back to home')])
+            ])
+        ]).

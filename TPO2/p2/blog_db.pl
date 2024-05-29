@@ -6,3 +6,25 @@ assert(post(3,"Opa","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
 assert(comment(1,"tremendo\r\n")).
 assert(comment(2,"muy buena receta!")).
 assert(comment(1,"buenisimo")).
+assert(post(4,"Hola","que tal")).
+assert(post(5,"Hola","que tal")).
+assert(post(6,"Hola","que tal")).
+assert(post(7,"Hola","que tal")).
+assert(post(8,"Hola","que tal")).
+assert(post(9,"ao","a")).
+assert(post(10,"ao","a")).
+assert(post(11,"ao","a")).
+assert(post(12,"ao","a")).
+assert(post(13,"ao","a")).
+assert(post(14,"ao","a")).
+assert(post(15,"ao","a")).
+assert(post(16,"ao","a")).
+assert(post(17,"ao","a")).
+assert(post(18,"ao","a")).
+assert(post(19,"ao","a")).
+assert(post(20,"ao","a")).
+assert(post(21,"ao","a")).
+assert(post(22,"ao","a")).
+assert(post(23,"ao","a")).
+assert(post(24,"ao","a")).
+assert(comment(1,"tremendo 2")).
