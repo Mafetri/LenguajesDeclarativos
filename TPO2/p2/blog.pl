@@ -99,22 +99,22 @@ new_post(Request) :-
         ]).
 
 new_post(_Request) :-
-    reply_html_page(title('New Post'), \post_form).
+    reply_html_page(
+        [title('Post Added'), link([rel=stylesheet, href='styles.css'])],
+        [
+            h1([class="title"],'reddit.pl'),
+            section([class=notification], [
+                form([class="post_form", action='/post', method='POST'], [
+                    label([for=title], 'Title: '),
+                    input([name=title, type=text]),
+                    label([for=content], 'Content: '),
+                    textarea([name=content, rows=10], ''),
+                    input([type=submit, value='Post'])
+                ])
+            ])
+        ]
+    ).
 
-post_form -->
-    html([
-        form([action='/post', method='POST'], [
-            p([], [
-                label([for=title], 'Title: '),
-                input([name=title, type=text])
-            ]),
-            p([], [
-                label([for=content], 'Content: '),
-                textarea([name=content], '')
-            ]),
-            p([], input([type=submit, value='Post']))
-        ])
-    ]).
 
 :- dynamic max_post_id/1.
 max_post_id(MaxId) :-
@@ -134,6 +134,6 @@ new_comment(Request) :-
         [
             h1([class="title"],'reddit.pl'),
             section([class(notification)], [
-                h2(['Post added! ', a([href('/')], 'Back to home')])
+                h2(['Comment added! ', a([href('/')], 'Back to home')])
             ])
         ]).
