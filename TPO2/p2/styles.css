@@ -1,0 +1,105 @@
+html {
+    filter: invert(95%) hue-rotate(180deg);
+
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #FF4500;
+    padding: 0.3em;
+    margin-top: auto;
+}
+
+.posts {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.post {
+    background-color: #d0d0d0;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    border-radius: 5px;
+}
+
+.post h2 {
+    text-align: center;
+    font-size: 2em;
+    margin: 0.1em;
+    padding: 0.2em;
+}
+
+.post p {
+    padding: 0.5em;
+}
+
+.posts a {
+    margin: 0.5em;
+    padding: 0.5em;
+    border-radius: 5px;
+    background: gray;
+    width: 51%;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+.comments {
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.comments h3 {
+    margin: 0.1em;
+    padding: 0.2em;
+}
+
+
+.comment {
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: gray;
+    margin: 8px 0 8px 0;
+}
+
+.comment_form {
+    display: flex;
+    flex-direction: row;
+
+}
+.comment_form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    resize: none;
+    border: solid;
+    border-width: 1.2px;
+}
+
+.comment_form input[type="submit"] {
+    border: 1.2px solid;
+    border-radius: 5px;
+    padding: 8px;
+}
