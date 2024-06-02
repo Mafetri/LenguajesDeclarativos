@@ -8,3 +8,6 @@ assert(comment(2,"muy buena receta!")).
 assert(comment(1,"buenisimo")).
 assert(post(25,"Asado","Como hacer un asado?")).
 assert(comment(25,"Con las manos pa")).
+assert(comment(1,"Hola!")).
+assert(post(26,"Ashe","Ashe")).
+assert(comment(26,"Buenisimo!")).
