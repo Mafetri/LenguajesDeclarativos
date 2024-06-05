@@ -1,13 +1,11 @@
-created(1716848938.3117814).
-assert(post(1,"Cocina 20","Una locura de bueno")).
-assert(comment(1,"muy bueno!")).
-assert(post(2,"Lorem","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id fringilla libero. Nunc vitae metus tempus, interdum lectus et, dignissim risus. Nulla pharetra tempus enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin dignissim nunc risus, a aliquam erat tempus id. Integer quis lacus ligula. Nunc erat eros, rutrum sed placerat nec, ultrices et enim. Mauris euismod porttitor diam, a mollis augue viverra sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sed dui risus.\r\n\r\n")).
-assert(post(3,"Same","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id fringilla libero. Nunc vitae metus tempus, interdum lectus et, dignissim risus. Nulla pharetra tempus enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin dignissim nunc risus, a aliquam erat tempus id. Integer quis lacus ligula. Nunc erat eros, rutrum sed placerat nec, ultrices et enim. Mauris euismod porttitor diam, a mollis augue viverra sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sed dui risus.\r\n\r\n")).
-assert(comment(1,"tremendo")).
-assert(comment(2,"muy buena receta!")).
-assert(comment(1,"buenisimo")).
-assert(post(25,"Asado","Como hacer un asado?")).
-assert(comment(25,"Con las manos pa")).
-assert(comment(1,"Hola!")).
-assert(post(26,"Ashe","Ashe")).
-assert(comment(26,"Buenisimo!")).
+assert(post(1, 'Introducción a Prolog', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.')).
+assert(post(2, 'Introducción a Python', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.')).
+assert(post(3, 'Introducción a JavaScript', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.')).
+assert(comment(1, 'Excelente introducción, muy clara y concisa.')).
+assert(comment(1, 'Me gustaría ver más ejemplos de código en Prolog.')).
+assert(comment(2, 'Muy bueno!!.')).
+assert(comment(2, 'Python is love, python is life')).
+assert(comment(3, 'Muy raro todo.')).
+assert(comment(3, 'No se entiende')).
+assert(comment(3, 'AGUANTE PROLOG!')).
+
